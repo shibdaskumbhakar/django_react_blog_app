@@ -136,7 +136,7 @@ const Dashboard = () => {
             </div>
           </section>
         </div>
-        {ownPost !== null && (
+        {ownPost !== null && ownPost.results.length > 0 && (
             <Pagination data={ownPost} handlePagination={handlePagination}/>
         )}
       </div>
