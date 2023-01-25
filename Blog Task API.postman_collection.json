@@ -1,0 +1,304 @@
+{
+	"info": {
+		"_postman_id": "7d59f63e-a000-46bf-8bf8-6d3dcf19a02c",
+		"name": "Blog Task API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"admin\",\n    \"password\":\"1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/auth/token",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"auth",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Forgot Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"admin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/auth/forgot-password",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"auth",
+								"forgot-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save Forgot Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"admin\",\n    \"otp\":\"155581\",\n    \"password\":\"12345\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/auth/save-password",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"auth",
+								"save-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Password",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc0NTA0MDExLCJpYXQiOjE2NzQ1MDM3MTEsImp0aSI6IjA4MTQzNjJmNjk4YTRlZjhiNzZjNzFjOWNkMjc4ZTUxIiwidXNlcl9pZCI6MSwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20ifQ.sppknhggLIj8mDwWg8vR5jMtkFTji1edezDZsz7LKdY",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"old_password\":\"12345\",\n    \"password\":\"1234\",\n    \"password2\":\"1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/auth/change-password",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"auth",
+								"change-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Registration",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"shibdas\",\n    \"password\":\"12345\",\n    \"email\":\"shibdas@gmail.com\",\n    \"first_name\":\"shibdas\",\n    \"last_name\":\"kumbhakar\",\n    \"profile\":{\n        \"bio\":\"good boy\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/auth/register",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Post",
+			"item": [
+				{
+					"name": "Get All Post",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/blog/post/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"blog",
+								"post",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Post By Slug",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/blog/post/new-post-3",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"blog",
+								"post",
+								"new-post-3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Post",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc0NTQzNDQxLCJpYXQiOjE2NzQ1NDMxNDEsImp0aSI6ImMxY2FmNzM4ZGYyOTQ5N2E5ODc3NmI2NjA0YmY1YTlkIiwidXNlcl9pZCI6MSwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20ifQ.X-BViqt0128XQV3xo_ogNjiRRUfXnmAesactlR43qY0",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\":\"updated titile\",\n    \"text\":\"updated text\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/blog/post/new-post-3/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"blog",
+								"post",
+								"new-post-3",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc0NTQzNDQxLCJpYXQiOjE2NzQ1NDMxNDEsImp0aSI6ImMxY2FmNzM4ZGYyOTQ5N2E5ODc3NmI2NjA0YmY1YTlkIiwidXNlcl9pZCI6MSwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20ifQ.X-BViqt0128XQV3xo_ogNjiRRUfXnmAesactlR43qY0",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/blog/post/new-post-3/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"blog",
+								"post",
+								"new-post-3",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Post",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc0NTQ0NDE5LCJpYXQiOjE2NzQ1NDQxMTksImp0aSI6ImVkODBhZDA0MDIyMDQwNzVhZjM5MzQ2ZDU1MWZlNzMzIiwidXNlcl9pZCI6MSwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20ifQ.C3zcGON0SXvoCj73N4aOvrwGPo7tFDU16aG6YZh7770",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "new post 4",
+									"type": "default"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/aviox/Pictures/Screenshot from 2022-12-26 09-50-35.png"
+								},
+								{
+									"key": "text",
+									"value": "new post text",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/blog/post/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"blog",
+								"post",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -60,3 +60,11 @@ I have added the backend url inside the /config/config.js file
 > Local serevr running on http://127.0.0.1:3000/
 
 
+## Postman Collection
+I have added the postman collection in this repo.
+
+Please Import the collection and add envermint for this collection . and add a envermint veriable
+
+> host = http://127.0.0.1:8000/api/v1
+
+
