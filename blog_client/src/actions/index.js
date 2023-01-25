@@ -52,7 +52,7 @@ export const deletePost = (slug) =>{
 }
 
 export const ownerPosts = (page_no) =>{
-    let url = blogUrl.getAllPost + `?page=${page_no}`
+    let url = blogUrl.ownerPost + `?page=${page_no}`
     const res = axios.get(url, get_config())
     return res
 }
