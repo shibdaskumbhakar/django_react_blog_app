@@ -32,7 +32,7 @@ const Home = () => {
   }, [])
 
   useEffect(() => {
-    console.log(postData)
+    console.log(postData,'================')
 
   }, [postData])
 
@@ -46,7 +46,9 @@ const Home = () => {
   return (
     <div className='home_page'>
       <div className="container">
-
+        {postData!== null && postData.results.length < 1 ? (
+          <h1>No Post Found</h1>
+        ):(
         <main role="main">
           {postData !== null && postData.page===1 && postData.results && (
             <article className="article-featured">
@@ -102,6 +104,7 @@ const Home = () => {
 
 
         </main>
+        )}
 
 
       </div>
