@@ -1,5 +1,12 @@
 # Blog Using Django And React
 
+# Prerequisites
+#### `Python`
+### `PostgreSQL`
+### `Node Js`
+
+***
+
 ## First Take the Clone From Git Repo
 
 #### `git clone https://github.com/shibdaskumbhakar/django_react_blog_app.git`
